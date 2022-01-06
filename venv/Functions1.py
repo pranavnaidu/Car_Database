@@ -61,4 +61,23 @@ class Car: # class functions with comments
             print("Number of customers: " + str(x))
 
 
+    def search(key1, list_names):
+        i = 0
+        j = 0
+        fieldvar = ''
+        for i in range(len(list_names)):
+            for j in range(len(list_names[i])):
+                var1 = list_names[i][j]
+                if key1 == var1:
+                    if j == 0:
+                        fieldvar == "Name"
+                    elif j == 1:
+                        fieldvar == "Car"
+                    elif j == 2:
+                        fieldvar == "Service"
+                    else:
+                        print("Error : " + j)
 
+                    print(key1 + " : " + fieldvar)
+                    print(list_names[i])
+                    continue

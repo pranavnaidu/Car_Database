@@ -8,7 +8,7 @@ class Table:
             for j in range(total_columns):
                 self.e = Entry(main, width=20, fg='black', font=('Arial', 10))
                 self.e.grid(row=i, column=j)
-                self.e.insert(END, lst1[i][j])
+                self.e.insert(END, lst[i][j])
 
 #empty list for customers
 lst = []
@@ -28,9 +28,10 @@ f.close()
 x.search_name("Tyler", lst)
 x.add_new_user("Amal", "Aston Martin DB11", "Headlight replacement", lst)
 x.search_car("Ferrari 488", lst)
-lst1 = x.delete_user("Adi", "Ferrari 458", "Tire change", lst)
+#lst1 = x.delete_user("Adi", "Ferrari 458", "Tire change", lst)
 x.search_service("Tire change", lst)
 x.customer_count(lst)
+x.search("Porsche 911", lst)
 
 # size of the table
 total_rows = len(lst)
@@ -54,6 +55,6 @@ for i in range(len(lst)):
     name = str(lst[i][0])
     car = str(lst[i][1])
     service = str(lst[i][2])
-    output.write(name + "," + car + "," + service)
+    output.write(name + ", " + car + ", " + service)
 
 output.close()
