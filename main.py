@@ -1,5 +1,5 @@
 from tkinter import *
-from Functions import Car
+from Functions1 import Car
 
 class Table:
 
@@ -10,29 +10,33 @@ class Table:
                 self.e.grid(row=i, column=j)
                 self.e.insert(END, lst[i][j])
 
-x = Car
+#empty list for customers
+lst = []
+x = Car  # instantiation of class
 
-lst = [("Pranav", "Porsche 911", "Oil change"),
-       ("Nirav", "Lexus LFA", "Oil change"),
-       ("Sasank", "Mercedes AMG GTR", "Tire change"),
-       ("Rithwik", "Audi R8", "Brake pad change"),
-       ("Adi", "Ferrari 458", "Transmission fluid change"),
-       ("Shrihan", "BMW M8", "Alignment check"),
-       ("Rohan", "Acura NSX", "Battery replacement"),
-       ("Dheeraj", "Nissan GTR", "Interior cleaning"),
-       ("Vinni", "Lamborghini Huracan", "Engine replacement"),
-       ("Arya", "Mclaren 570S", "Front lift")]
+with open("text.txt") as f:
+    for line in f:
+        currentline = line.split(',')
+        name = str(currentline[0])
+        car = str(currentline[1])
+        service = str(currentline[2])
+        tuple_insert = (name, car, service)
+        lst.append(tuple_insert)
 
-x.search_name("Nirav", lst)
+f.close()
+# testing functions
+x.search_name("Tyler", lst)
 x.add_new_user("Amal", "Aston Martin DB11", "Headlight replacement", lst)
-x.search_car("Aston Martin DB11", lst)
-x.delete_user("Pranav", "Porsche 911", "Oil change", lst)
-x.search_service("Oil change", lst)
+x.search_car("Ferrari 488", lst)
+x.delete_user("Aaron", "Ferrari 458", "Transmission fluid change", lst)
+x.search_service("Tire change", lst)
 x.customer_count(lst)
 
+# size of the table
 total_rows = len(lst)
 total_columns = len(lst[0])
 
+# window creation with the table and button.
 main = Tk()
 button1 = Button(main, text="Table", bd=5)
 button1.pack()
