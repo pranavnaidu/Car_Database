@@ -25,10 +25,10 @@ with open("input.txt") as f:
 
 f.close()
 # testing functions
-x.search_name("Tyler", lst)
-x.add_new_user("Amal", "Aston Martin DB11", "Headlight replacement", lst)
-x.search_car("Ferrari 488", lst)
-#lst1 = x.delete_user("Adi", "Ferrari 458", "Tire change", lst)
+x.search_name("Tyler Williams", lst)
+x.add_new_user("Amal Sam", "Aston Martin DB11", "Headlight replacement", lst)
+x.search_car("Porsche 911", lst)
+lst1 = x.delete_user("Adi Ramana", "Ferrari 458", "Tire change", lst)
 x.search_service("Tire change", lst)
 x.customer_count(lst)
 x.search("Porsche 911", lst)
@@ -55,6 +55,6 @@ for i in range(len(lst)):
     name = str(lst[i][0])
     car = str(lst[i][1])
     service = str(lst[i][2])
-    output.write(name + ", " + car + ", " + service)
+    output.write(name + "," + car + "," + service)
 
 output.close()

@@ -4,7 +4,7 @@ class Car: # class functions with comments
         found = 0
         for i in range(len(list_names)):
             if search_key_name == list_names[i][0]:
-                print("The name " + search_key_name + " is in the list. The customer owns a " + list_names[i][1] + " and needs a " + list_names[i][2] + ".")
+                print(search_key_name + " is in the list. Owns a" + list_names[i][1] + " and needs a" + list_names[i][2])
                 found = 1
                 continue
         if found == 0:
@@ -46,11 +46,9 @@ class Car: # class functions with comments
                         list_names.remove(list_names[i])
                         print("The user " + name + " has been removed.")
                         continue
-            else:
-                print("The user " + name + " is not in the list.")
+        else:
+            print("The user " + name + " is not in the list.")
 
-        print("************************")
-        print(list_names)
         return list_names
 
     def customer_count(list_names): # counts the number of customers in the list
