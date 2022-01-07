@@ -1,5 +1,13 @@
 from tkinter import *
 from Functions1 import Car
+import mysql.connector
+
+db = mysql.connector.connect(
+    database="MySQL80",
+    user="PranavDBA",
+    passwd="mysqldba",
+    host="localhost"
+)
 
 class Table:
 
